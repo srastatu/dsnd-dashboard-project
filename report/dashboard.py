@@ -241,7 +241,7 @@ class Report(CombinedComponent):
     ]
 
 # Initialize a fasthtml app 
-app, route = fast_app()
+app = FastHTML()
 
 # Initialize the `Report` class
 report = Report()
@@ -249,7 +249,7 @@ report = Report()
 
 # Create a route for a get request
 # Set the route's path to the root
-@route.get('/')
+@app.route('/')
 def get():
     # Call the initialized report
     # pass the integer 1 and an instance
@@ -264,7 +264,7 @@ def get():
 # an ID of `2`. 
 # parameterize the employee ID 
 # to a string datatype
-@route.get('/employee/{id}')
+@app.route('/employee/{id}')
 def get(id: str):
     # Call the initialized report
     # pass the ID and an instance
@@ -279,7 +279,7 @@ def get(id: str):
 # an ID of `2`. 
 # parameterize the team ID 
 # to a string datatype
-@route.get('/team/{id}')
+@app.route('/team/{id}')
 def get(id: str):
 
     # Call the initialized report
